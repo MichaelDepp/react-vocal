@@ -1,12 +1,14 @@
-module.exports = api => ({
-	"presets": [
-		"@babel/preset-env",
-		"@babel/preset-react"
+module.exports = (api) => ({
+	presets: ['@babel/preset-env', '@babel/preset-react'],
+	plugins: [
+		'@babel/plugin-proposal-class-properties',
+		'@babel/plugin-transform-react-jsx',
+		...(api.env('test') ? ['@babel/plugin-transform-runtime'] : []),
+		[
+			'@babel/plugin-transform-runtime',
+			{
+				regenerator: true,
+			},
+		],
 	],
-	"plugins": [
-		"@babel/plugin-proposal-class-properties",
-		"@babel/plugin-transform-react-jsx",
-		...(api.env('test') ? ["@babel/plugin-transform-runtime"] : [])
-	]
 })
-

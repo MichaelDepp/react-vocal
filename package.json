@@ -27,7 +27,7 @@
 		"@babel/core": "^7.10.1",
 		"@babel/plugin-proposal-class-properties": "^7.10.1",
 		"@babel/plugin-transform-react-jsx": "^7.10.1",
-		"@babel/plugin-transform-runtime": "^7.10.1",
+		"@babel/plugin-transform-runtime": "^7.12.10",
 		"@babel/preset-env": "^7.10.2",
 		"@babel/preset-react": "^7.10.1",
 		"@commitlint/cli": "^9.1.1",
@@ -127,5 +127,8 @@
 		"build:es": "cross-env NODE_ENV=production BABEL_ENV=es rollup -c",
 		"build:umd": "cross-env NODE_ENV=production BABEL_ENV=umd rollup -c",
 		"prettier": "prettier \"*/**/*.js\" --ignore-path ./.prettierignore --write && git add . && git status"
+	},
+	"dependencies": {
+		"@babel/runtime": "^7.12.5"
 	}
 }
